@@ -12,7 +12,7 @@
     <title>php-strong-password-generator</title>
 </head>
 <body>
-    <header>
+<header>
         <h1 class="text-center text-info m-4">Password Generator</h1>
     </header>
 
