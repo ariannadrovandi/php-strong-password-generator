@@ -24,6 +24,12 @@
                 <button class="btn bg-secondary-subtle border my-2" type="submit">Genera password</button>
             </form>
         </div>
+
+        <div class="container">
+            <p class="text-decoration-underline text-success">
+                La tua nuova password è: 
+            </p>
+        </div>
     </main>
 </body>
 </html>
