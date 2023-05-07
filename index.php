@@ -1,4 +1,6 @@
-<?php 
+<?php include __DIR__ .'/data/data.php';
+
+$newPassword = generatePassword($charactersList);
 
 ?>
 
@@ -20,16 +22,18 @@
         <div class="container">
             <form class="d-flex flex-column align-items-center justify-content-center" action="<?php echo $_SERVER['PHP_SELF']?>">
                 <label class="my-2" for="psswLength">Scegli la lunghezza della tua nuova password</label>
-                <input class="form-control my-2 w-50" type="number" name="psswLength" id="psswLength" min="8" max="40" placeholder="Scegli un numero da 8 a 40">
+                <input class="form-control my-2 w-50" type="number" name="psswLength" id="psswLength" min="8" max="32" placeholder="Scegli un numero da 8 a 32">
                 <button class="btn bg-secondary-subtle border my-2" type="submit">Genera password</button>
             </form>
         </div>
 
-        <div class="container">
-            <p class="text-decoration-underline text-success">
-                La tua nuova password è: 
-            </p>
-        </div>
+        <?php if($newPassword) { ?>
+            <div class="container">
+                <p>
+                    La tua nuova password è: <span class="text-success fs-5"><?php echo " $newPassword" ?></span>
+                </p>
+            </div>
+        <?php } ?>
     </main>
 </body>
 </html>
