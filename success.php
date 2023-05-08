@@ -1,6 +1,9 @@
 <?php
     session_start();
     var_dump($_SESSION);
+    if(empty($_SESSION['password'])){
+        header('Location: ./index.php');
+    }
 ?>
 
 <!DOCTYPE html>
