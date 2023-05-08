@@ -1,6 +1,13 @@
-<?php include __DIR__ .'/data/data.php';
+<?php 
+include __DIR__ .'/data/data.php';
 
-$newPassword = generatePassword($charactersList);
+if(isset($_GET['psswLength'])) {
+    $psswLenght = $_GET['psswLength'];
+    $response = generatePassword($psswLength);
+}
+
+
+// $newPassword = generatePassword($charactersList);
 
 ?>
 
@@ -27,13 +34,13 @@ $newPassword = generatePassword($charactersList);
             </form>
         </div>
 
-        <?php if($newPassword) { ?>
+        <?php if(isset($response)) { ?>
             <div class="container">
-                <p>
-                    La tua nuova password è: <span class="text-success fs-5"><?php echo " $newPassword" ?></span>
+                <p class="text-success fs-5">
+                    <?php echo "$response" ?>
                 </p>
             </div>
-        <?php } ?>
+        <?php }?>
     </main>
 </body>
 </html>
